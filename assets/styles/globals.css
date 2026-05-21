@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+/*Color palette*/
+@theme {
+    --color-primary:      #005fe2;
+    --color-primary-dark: #0049ae;
+    --color-primary-base: #005fe2;
+    --color-primary-light: #0083ff;
+    --color-primary-lighter: #abcaf5;
+    --color-primary-bg: #d6e6ff;
+    --color-primary-gray: #f0f5fd;
+
+    --color-secondary-dark: #b51700;
+    --color-secondary-base: #ff1d00;
+    --color-secondary-light: #fa4f38;
+    --color-secondary-lighter: #f78374;
+    --color-secondary-gray: #f7e9e7;
+
+    --color-tertiary-base: #ff6f00;
+    --color-tertiary-light: #e8b452;
+    --color-tertiary-lighter: #f6f2e2;
+
+    /* Poppins font family */
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+/* floating icon animation — used on auth icon clusters */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+}
+
+.icon-float {
+    animation: float 8s ease-in-out infinite;
+}
+
+button {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Thin auto-hiding scrollbar — use class "scrollbar-thin" */
+.scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 99px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
