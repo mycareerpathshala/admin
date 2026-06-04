@@ -1,7 +1,3 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendEmail({
     to,
     subject,
@@ -13,6 +9,8 @@ export async function sendEmail({
     html: string;
     from?: string;   // override the default sender (e.g. admission@mycareerpathshala.com)
 }) {
+    const { Resend } = await import('resend');
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const sender = from ?? process.env.EMAIL_FROM ?? 'noreply@mycareerpathshala.com';
     // In dev, EMAIL_DEV_OVERRIDE redirects all email to one inbox for easy testing.
     const recipient = process.env.EMAIL_DEV_OVERRIDE ?? to;
