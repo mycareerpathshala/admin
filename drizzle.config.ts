@@ -5,11 +5,7 @@ export default defineConfig({
     out: './drizzle',
     dialect: 'postgresql',
     dbCredentials: {
-        host: 'localhost',
-        port: 5432,
-        database: 'mcpapp',
-        user: 'mcpadmin',
-        password: 'mcp@2026',
+        url: process.env.DATABASE_URL!,
         ssl: false,
     },
 });
