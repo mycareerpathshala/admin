@@ -1,3 +1,5 @@
+import { brandHeader } from '../branding';
+
 const year = () => new Date().getFullYear();
 
 export function counsellingScheduledEmailHtml({
@@ -42,13 +44,7 @@ export function counsellingScheduledEmailHtml({
       <td align="center">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border-radius:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow:hidden;">
 
-          <!-- Header -->
-          <tr>
-            <td style="background:linear-gradient(135deg,#0369a1 0%,#0284c7 100%);padding:32px 40px 28px;">
-              <p style="margin:0;font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">My Career Pathshala</p>
-              <p style="margin:6px 0 0;font-size:13px;color:#bae6fd;">Counselling Session Confirmed</p>
-            </td>
-          </tr>
+          ${brandHeader({ label: 'Counselling Session Confirmed', gradient: 'linear-gradient(135deg,#0369a1 0%,#0284c7 100%)', labelColor: '#bae6fd' })}
 
           <!-- Body -->
           <tr>
@@ -117,13 +113,7 @@ export function counsellingCancelledEmailHtml({ firstName }: { firstName: string
       <td align="center">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border-radius:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow:hidden;">
 
-          <!-- Header -->
-          <tr>
-            <td style="background:linear-gradient(135deg,#475569 0%,#64748b 100%);padding:32px 40px 28px;">
-              <p style="margin:0;font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">My Career Pathshala</p>
-              <p style="margin:6px 0 0;font-size:13px;color:#cbd5e1;">Counselling Update</p>
-            </td>
-          </tr>
+          ${brandHeader({ label: 'Counselling Update', gradient: 'linear-gradient(135deg,#475569 0%,#64748b 100%)', labelColor: '#cbd5e1' })}
 
           <!-- Body -->
           <tr>
@@ -182,13 +172,7 @@ export function counsellingCompletedEmailHtml({ firstName }: { firstName: string
       <td align="center">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border-radius:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow:hidden;">
 
-          <!-- Header -->
-          <tr>
-            <td style="background:linear-gradient(135deg,#059669 0%,#10b981 100%);padding:32px 40px 28px;">
-              <p style="margin:0;font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">My Career Pathshala</p>
-              <p style="margin:6px 0 0;font-size:13px;color:#a7f3d0;">Session Summary</p>
-            </td>
-          </tr>
+          ${brandHeader({ label: 'Session Summary', gradient: 'linear-gradient(135deg,#059669 0%,#10b981 100%)', labelColor: '#a7f3d0' })}
 
           <!-- Body -->
           <tr>

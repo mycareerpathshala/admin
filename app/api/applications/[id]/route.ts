@@ -1,7 +1,7 @@
 import { getSession } from '@/assets/lib/auth/session';
 import { db } from '@/assets/lib/database/db';
 import { applications, users } from '@/assets/lib/database/schema';
-import { sendEmail } from '@/assets/lib/email';
+import { sendEmail, EMAIL_FROM_ADMISSION } from '@/assets/lib/email';
 import { applicationStatusEmailHtml } from '@/assets/lib/email/templates/applicationStatus';
 import { applicationNotification, createNotification } from '@/assets/lib/notifications';
 import { eq } from 'drizzle-orm';
@@ -63,7 +63,7 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
 
                 await sendEmail({
                     to:      user.email,
-                    from:    process.env.EMAIL_FROM_ADMISSION,
+                    from:    EMAIL_FROM_ADMISSION,
                     subject: SUBJECT[body.status!] ?? 'Application status updated',
                     html,
                 }).catch(() => {});

@@ -1,7 +1,7 @@
 import { getSession } from '@/assets/lib/auth/session';
 import { db } from '@/assets/lib/database/db';
 import { counsellings, users } from '@/assets/lib/database/schema';
-import { sendEmail } from '@/assets/lib/email';
+import { sendEmail, EMAIL_FROM_ADMISSION } from '@/assets/lib/email';
 import {
     counsellingCancelledEmailHtml,
     counsellingCompletedEmailHtml,
@@ -80,7 +80,7 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
             }
 
             if (html) {
-                await sendEmail({ to: user.email, subject, html, from: process.env.EMAIL_FROM_ADMISSION }).catch(() => {});
+                await sendEmail({ to: user.email, subject, html, from: EMAIL_FROM_ADMISSION }).catch(() => {});
             }
         })().catch(() => {});
     }
